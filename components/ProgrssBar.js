@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 
+const barHeight = 7;
 const ProgressBar = ({progressLevel}) => {
     // As I don't know how many steps are necessary for the
     // onboraing process I will use this progressLevel prop
@@ -10,7 +11,7 @@ const ProgressBar = ({progressLevel}) => {
         return {
                 display: "flex",
                 backgroundColor: "orange",
-                height: 10,
+                height: barHeight,
                 flex: progressLevel
         }
     }
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
     incompleteBar: {
         display: "flex",
         backgroundColor: "#c6c6c6",
-        height: 10,
+        height: barHeight,
         flex: 1
     }
 });
