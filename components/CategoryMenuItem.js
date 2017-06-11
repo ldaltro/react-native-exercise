@@ -1,5 +1,9 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Image } from "react-native";
+
+import SVGImage from "react-native-svg-image";
+
+import SvgUri from 'react-native-svg-uri';
 
 const CategoryMenuItem = ({categoryText}) => {
     return(
