@@ -19,7 +19,7 @@ const ProgressBar = ({progressLevel}) => {
         <View style={styles.bar}>
             <View style={completedBarStyle(progressLevel)}>
             </View>
-            <View style={styles.icompleteBar}>
+            <View style={styles.incompleteBar}>
             </View>
         </View>
     );
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center'
     },
-    icompleteBar: {
+    incompleteBar: {
         display: "flex",
         backgroundColor: "#c6c6c6",
         height: 10,
