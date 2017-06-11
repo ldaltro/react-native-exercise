@@ -7,12 +7,14 @@ import {
 import CategoryMenuItem from "./components/CategoryMenuItem";
 import CategoryPicker from "./components/CategoryPicker";
 import Header from "./components/Header";
+import ProgressBar from "./components/ProgrssBar"
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Header />
+        <ProgressBar progressLevel={2}/>
         <CategoryPicker />
       </View>
     );
