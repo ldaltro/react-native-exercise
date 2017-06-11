@@ -2,12 +2,14 @@ import React from 'react';
 import { 
   StyleSheet, 
   View,
+  Text
 } from 'react-native';
 
 import CategoryMenuItem from "./components/CategoryMenuItem";
 import CategoryPicker from "./components/CategoryPicker";
 import Header from "./components/Header";
-import ProgressBar from "./components/ProgrssBar"
+import ProgressBar from "./components/ProgrssBar";
+import NextButton from "./components/NextButton";
 
 export default class App extends React.Component {
   render() {
@@ -15,7 +17,11 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <Header />
         <ProgressBar progressLevel={2}/>
+        <View style={styles.titleTextContainer}>
+          <Text style={styles.titleText}>Vad fick du hjälp med?</Text>
+        </View>
         <CategoryPicker />
+        <NextButton nextPage={() => console.log()}/>
       </View>
     );
   }
@@ -27,4 +33,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingTop: 24
   },
+  titleTextContainer: {
+    alignItems: "center",
+    padding: 15
+  },
+  titleText: {
+    color: "#555656",
+    fontSize: 20,
+    fontWeight: "bold"
+  }
 });
