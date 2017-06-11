@@ -1,15 +1,27 @@
 import React from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, TouchableHighlight } from "react-native";
 
 import SVGImage from "react-native-svg-image";
 
 import SvgUri from 'react-native-svg-uri';
 
-const CategoryMenuItem = ({categoryText}) => {
+const CategoryMenuItem = ({categoryText, onPress, activeCategory}) => {
+    const itemStyle = () => {
+        const backgroundColor = categoryText === activeCategory ? "#cc801e" : "#CCC";
+        return {
+            backgroundColor,
+            margin: 10,
+            width: 100,
+            height: 100
+        }
+    }
     return(
-        <View style={styles.item}>
+        <View>    
+        <TouchableHighlight style={itemStyle()}
+                            onPress={() => onPress(categoryText)}>
             <Text >{categoryText}</Text>
-        </View>
+        </TouchableHighlight>
+        </View>  
     );
 }
 

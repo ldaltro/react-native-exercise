@@ -21,7 +21,7 @@ export default class App extends React.Component {
           <Text style={styles.titleText}>Vad fick du hjälp med?</Text>
         </View>
         <CategoryPicker />
-        <NextButton nextPage={() => console.log()}/>
+        <NextButton nextPage={() => console.log("open next page")}/>
       </View>
     );
   }
