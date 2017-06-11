@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, StyleSheet, TouchableHighlight } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 
 import SVGImage from "react-native-svg-image";
 
@@ -17,10 +17,10 @@ const CategoryMenuItem = ({categoryText, onPress, activeCategory}) => {
     }
     return(
         <View>    
-        <TouchableHighlight style={itemStyle()}
+        <TouchableOpacity style={itemStyle()}
                             onPress={() => onPress(categoryText)}>
             <Text >{categoryText}</Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
         </View>  
     );
 }

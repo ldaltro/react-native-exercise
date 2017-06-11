@@ -17,15 +17,16 @@ const categories = ["Babysitting", "Dog-Walking",
 export default class CategoryPicker extends React.Component {
   constructor() {
     super();
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+     this.ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(categories),
+      dataSource: this.ds.cloneWithRows(categories),
       activeCategory: ""
     };
   }
 
   selectCategory = (categoryName) => {
-    this.setState({activeCategory: categoryName});
+    // updating the dataSource will force React to re-render the list
+    this.setState({dataSource: this.ds.cloneWithRows(categories), activeCategory: categoryName});
   }
 
   renderCategory(rowData) {
