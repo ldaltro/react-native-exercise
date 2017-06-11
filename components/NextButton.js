@@ -1,13 +1,15 @@
 import React from "react";
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet, TouchableHighlight } from "react-native";
 
 const NextButton = ({nextPage}) => {
     return(
         <View style={styles.container}>   
-            <TouchableOpacity style={styles.nextButton}
+            <TouchableHighlight 
+                    style={styles.nextButton}
+                    underlayColor={"#cc801e"}
                     onPress={nextPage}>
                     <Text style={styles.btnText}>Nästa</Text>
-                    </TouchableOpacity>
+                    </TouchableHighlight>
         </View>   
     );
 }
