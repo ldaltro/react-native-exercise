@@ -32,7 +32,6 @@ export default class CategoryScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {/*<Header />*/}
         <ProgressBar progressLevel={this.state.progressLevel}/>
         <View style={styles.titleTextContainer}>
           <Text style={styles.titleText}>Vad fick du hjälp med?</Text>
