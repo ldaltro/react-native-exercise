@@ -10,8 +10,8 @@ const CategoryMenuItem = ({categoryName, onPress, activeCategory}) => {
             borderColor: "#afafaf",
             borderWidth: 0.3,
             marginBottom: 10,
-            width: 130,
-            height: 130,
+            width: 125,
+            height: 125,
             justifyContent: "center",
             alignItems: "center"
         }
