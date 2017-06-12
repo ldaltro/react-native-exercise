@@ -30,7 +30,7 @@ export default class CategoryPicker extends React.Component {
   }
 
   renderCategory(rowData) {
-    return <CategoryMenuItem categoryText={rowData} 
+    return <CategoryMenuItem categoryName={rowData} 
                              onPress={(categoryName) => this.selectCategory(categoryName)}
                              activeCategory={this.state.activeCategory}/>;
   }

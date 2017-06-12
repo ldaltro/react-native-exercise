@@ -1,13 +1,9 @@
 import React from "react";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 
-import SVGImage from "react-native-svg-image";
-
-import SvgUri from 'react-native-svg-uri';
-
-const CategoryMenuItem = ({categoryText, onPress, activeCategory}) => {
+const CategoryMenuItem = ({categoryName, onPress, activeCategory}) => {
     const itemStyle = () => {
-        const backgroundColor = categoryText === activeCategory ? "#cc801e" : "#CCC";
+        const backgroundColor = categoryName === activeCategory ? "#cc801e" : "#CCC";
         return {
             backgroundColor,
             margin: 10,
@@ -18,8 +14,8 @@ const CategoryMenuItem = ({categoryText, onPress, activeCategory}) => {
     return(
         <View>    
         <TouchableOpacity style={itemStyle()}
-                            onPress={() => onPress(categoryText)}>
-            <Text >{categoryText}</Text>
+                            onPress={() => onPress(categoryName)}>
+            <Text >{categoryName}</Text>
         </TouchableOpacity>
         </View>  
     );
