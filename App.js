@@ -12,6 +12,17 @@ import ProgressBar from "./components/ProgrssBar";
 import NextButton from "./components/NextButton";
 
 export default class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      activeCategory: ""
+    }
+  }
+
+  updateCategory = (activeCategory) => {
+    this.setState({activeCategory});
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -20,8 +31,9 @@ export default class App extends React.Component {
         <View style={styles.titleTextContainer}>
           <Text style={styles.titleText}>Vad fick du hjälp med?</Text>
         </View>
-        <CategoryPicker />
-        <NextButton nextPage={() => console.log("open next page")}/>
+        <CategoryPicker activeCategory={this.state.activeCategory}
+                        updateCategory={this.updateCategory}/>
+        <NextButton nextPage={() => console.log("user chose " + this.state.activeCategory)}/>
       </View>
     );
   }

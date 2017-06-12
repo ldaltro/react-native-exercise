@@ -20,19 +20,19 @@ export default class CategoryPicker extends React.Component {
      this.ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       dataSource: this.ds.cloneWithRows(categories),
-      activeCategory: ""
     };
   }
 
   selectCategory = (categoryName) => {
     // updating the dataSource will force React to re-render the list
-    this.setState({dataSource: this.ds.cloneWithRows(categories), activeCategory: categoryName});
+    this.setState({dataSource: this.ds.cloneWithRows(categories)});
+    this.props.updateCategory(categoryName);
   }
 
   renderCategory(rowData) {
     return <CategoryMenuItem categoryName={rowData} 
                              onPress={(categoryName) => this.selectCategory(categoryName)}
-                             activeCategory={this.state.activeCategory}/>;
+                             activeCategory={this.props.activeCategory}/>;
   }
    render() {
     return (
