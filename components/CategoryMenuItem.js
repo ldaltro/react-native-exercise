@@ -24,6 +24,8 @@ const CategoryMenuItem = ({categoryName, onPress, activeCategory}) => {
         }
     }
 
+    // Had to write this silly function because of the way React Native handles packages
+    // more about that can be found here: https://github.com/facebook/react-native/issues/6391
     const categoryImage = () => {
         if(isCategoryActive) {
             switch(categoryName) {
