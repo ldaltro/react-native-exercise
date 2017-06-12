@@ -12,7 +12,7 @@ const categories = ["Babysitting", "Dog-Walking",
                    "Event Helper", "Gardening", 
                    "Homework", "It support", 
                    "Misc", "Painting", 
-                   "Music Lessons"];
+                   "Sports or Music"];
 
 export default class CategoryPicker extends React.Component {
   constructor() {
@@ -47,7 +47,7 @@ export default class CategoryPicker extends React.Component {
 
 const styles = StyleSheet.create({
   list: {
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     flexDirection: 'row',
     flexWrap: 'wrap'
   },
