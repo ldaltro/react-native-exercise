@@ -15,7 +15,8 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      activeCategory: ""
+      activeCategory: "",
+      progressLevel: 2
     }
   }
 
@@ -23,11 +24,13 @@ export default class App extends React.Component {
     this.setState({activeCategory});
   }
 
+  updateprogressLevel = (progressLevel) => this.setState({progressLevel});
+
   render() {
     return (
       <View style={styles.container}>
         <Header />
-        <ProgressBar progressLevel={2}/>
+        <ProgressBar progressLevel={this.state.progressLevel}/>
         <View style={styles.titleTextContainer}>
           <Text style={styles.titleText}>Vad fick du hjälp med?</Text>
         </View>
