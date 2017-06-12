@@ -29,6 +29,13 @@ export default class CategoryScreen extends React.Component {
 
   updateprogressLevel = (progressLevel) => this.setState({progressLevel});
 
+  nastaAction = () => {
+      const {activeCategory} = this.state;
+      if(activeCategory !== "") {
+        console.log("user chose " + activeCategory);
+      }
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -38,7 +45,9 @@ export default class CategoryScreen extends React.Component {
         </View>
         <CategoryPicker activeCategory={this.state.activeCategory}
                         updateCategory={this.updateCategory}/>
-        <NextButton nextPage={() => console.log("user chose " + this.state.activeCategory)}/>
+        <NextButton
+            activeCategory={this.state.activeCategory} 
+            nextPage={this.nastaAction}/>
       </View>
     );
   }

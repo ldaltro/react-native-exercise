@@ -1,12 +1,25 @@
 import React from "react";
 import { Text, View, StyleSheet, TouchableHighlight } from "react-native";
 
-const NextButton = ({nextPage}) => {
+ 
+ const nextButtonStyle = (userPickedACategory) => {  
+     return {
+        backgroundColor: userPickedACategory ? "#f59b25" : "gray",
+        alignItems: "center",
+        justifyContent: "center",
+        height: 45,
+        width: 350,
+        borderRadius: 10
+     }
+}
+
+const NextButton = ({nextPage, activeCategory}) => {
+    const userPickedACategory = activeCategory !== "";
     return(
         <View style={styles.container}>   
             <TouchableHighlight 
-                    style={styles.nextButton}
-                    underlayColor={"#cc801e"}
+                    style={nextButtonStyle(userPickedACategory)}
+                    underlayColor={userPickedACategory ? "#cc801e" : "gray"}
                     onPress={nextPage}>
                     <Text style={styles.btnText}>Nästa</Text>
                     </TouchableHighlight>
