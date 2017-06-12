@@ -34,14 +34,6 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       padding: 30
   },
-  nextButton: {
-        backgroundColor: "#f59b25",
-        alignItems: "center",
-        justifyContent: "center",
-        height: 45,
-        width: 350,
-        borderRadius: 10
-    },
     btnText: {
         color: "white",
         fontWeight: "bold"
