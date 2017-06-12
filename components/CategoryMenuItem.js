@@ -76,7 +76,8 @@ const CategoryMenuItem = ({categoryName, onPress, activeCategory}) => {
     return(
         <View>
             <TouchableOpacity style={itemStyle()}
-                                onPress={() => onPress(categoryName)}>
+                              activeOpacity={1}
+                              onPress={() => onPress(categoryName)}>
                 <Image style={styles.image}
                 source={categoryImage()}/>    
                 <Text style={categoryNameStyle()}>{categoryName}</Text>
