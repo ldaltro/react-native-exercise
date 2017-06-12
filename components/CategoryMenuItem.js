@@ -1,11 +1,10 @@
 import React from "react";
 import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
 
-const pic = "Babysitting.png";
-
 const CategoryMenuItem = ({categoryName, onPress, activeCategory}) => {
+    isCategoryActive = categoryName === activeCategory;
     const itemStyle = () => {
-        const backgroundColor = categoryName === activeCategory ? "#ffbb47" : "white";
+        const backgroundColor = isCategoryActive ? "#ffbb47" : "white";
         return {
             backgroundColor,
             borderColor: "#afafaf",
@@ -18,26 +17,56 @@ const CategoryMenuItem = ({categoryName, onPress, activeCategory}) => {
         }
     }
 
+    const categoryNameStyle = () => {
+        return {
+        color: isCategoryActive ? "white" : "#555656",
+        fontWeight: "bold",
+        }
+    }
+
     const categoryImage = () => {
-        switch(categoryName) {
-            case "Babysitting":
-             return require("../images/png/categories/Babysitting.png");
-            case "Dog-Walking":
-             return require("../images/png/categories/Dog-Walking.png");
-            case "Event Helper":
-             return require("../images/png/categories/Event Helper.png");
-            case "Gardening":
-             return require("../images/png/categories/Gardening.png");
-            case "Homework":
-             return require("../images/png/categories/Homework.png");
-            case "It support":
-             return require("../images/png/categories/It support.png");
-            case "Misc":
-             return require("../images/png/categories/Misc.png");
-            case "Painting":
-             return require("../images/png/categories/Painting.png");
-            case "Sports or Music":
-             return require("../images/png/categories/Sports or Music.png");
+        if(isCategoryActive) {
+            switch(categoryName) {
+                case "Babysitting":
+                return require("../images/png/categories/Babysitting_active.png");
+                case "Dog-Walking":
+                return require("../images/png/categories/Dog-Walking_active.png");
+                case "Event Helper":
+                return require("../images/png/categories/Event Helper_active.png");
+                case "Gardening":
+                return require("../images/png/categories/Gardening_active.png");
+                case "Homework":
+                return require("../images/png/categories/Homework_active.png");
+                case "It support":
+                return require("../images/png/categories/It support_active.png");
+                case "Misc":
+                return require("../images/png/categories/Misc_active.png");
+                case "Painting":
+                return require("../images/png/categories/Painting_active.png");
+                case "Sports or Music":
+                return require("../images/png/categories/Sports or Music_active.png");
+            }
+        } else {
+            switch(categoryName) {
+                case "Babysitting":
+                return require("../images/png/categories/Babysitting.png");
+                case "Dog-Walking":
+                return require("../images/png/categories/Dog-Walking.png");
+                case "Event Helper":
+                return require("../images/png/categories/Event Helper.png");
+                case "Gardening":
+                return require("../images/png/categories/Gardening.png");
+                case "Homework":
+                return require("../images/png/categories/Homework.png");
+                case "It support":
+                return require("../images/png/categories/It support.png");
+                case "Misc":
+                return require("../images/png/categories/Misc.png");
+                case "Painting":
+                return require("../images/png/categories/Painting.png");
+                case "Sports or Music":
+                return require("../images/png/categories/Sports or Music.png");
+            }
         }
         return "";
     }
@@ -48,7 +77,7 @@ const CategoryMenuItem = ({categoryName, onPress, activeCategory}) => {
                                 onPress={() => onPress(categoryName)}>
                 <Image style={styles.image}
                 source={categoryImage()}/>    
-                <Text style={styles.categoryName}>{categoryName}</Text>
+                <Text style={categoryNameStyle()}>{categoryName}</Text>
             </TouchableOpacity>
         </View>  
     );
@@ -59,10 +88,6 @@ const styles = StyleSheet.create({
   image: {
         marginBottom: 15,
     },
-    categoryName: {
-        color: "#555656",
-        fontWeight: "bold",
-    }
 });
 
 export default CategoryMenuItem;
